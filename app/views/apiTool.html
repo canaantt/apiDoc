@@ -1,0 +1,139 @@
+<div class="jumbotron">
+  <h1>Oncoscape Data Exploration</h1>
+  <p>Oncoscape Backend Data Api Exploration</p>
+</div>
+
+<div class="container">
+  <div class="input-group" id="mainInput">
+    <input id="txtQuery" type="text" class="form-control" placeholder="localhost/api/">
+    <span class="input-group-btn">
+      <button  id="btnSubmit" class="btn btn-default submit" type="button">Submit</button>
+    </span>
+  </div>
+
+  <div class="row">
+   <div class="span9">
+      <div class="column">
+        <div class="col-xs-12 col-md-6 tray">  
+          <br>
+          <button id="userPanel" class="btn btn-info" data-toggle="collapse" data-target="#userPanelContent">User Query Panel</button>
+          <div id="userPanelContent" class="collapse in">
+
+            <br>
+            <label for="basic-url">Collection</label>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3">http://localhost:3000/api/</span>
+              <input type="text" class="form-control" id="collectionInput" aria-describedby="basic-addon3">
+            </div>
+          
+            <br>
+            <label for="basic-url">Query (separated by comma)</label>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3">Query</span>
+              <input type="text" class="form-control" id="criInput" aria-describedby="basic-addon3">
+            </div>
+
+            <br>
+            <label for="basic-url">Fields (separated by comma)</label>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3">$field</span>
+              <input type="text" class="form-control" id="fieldsInput" aria-describedby="basic-addon3">
+            </div>
+
+            <br>
+            <label for="basic-url">Limit/Skip the number of returned records OR Click to COUNT</label>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3">$limit</span>
+              <input type="text" class="form-control" id="limitInput" aria-describedby="basic-addon3">
+
+              <span class="input-group-addon" id="basic-addon3">$skip</span>
+              <input type="text" class="form-control" id="skipInput" aria-describedby="basic-addon3">
+              <span class="btn btn-warning input-group-addon" id="btnCount">/count</span>
+            </div> 
+
+            <br>
+              <button id="cusSubmit" class="btn btn-md submit">Submit</button> 
+              <button id="advancedQuery" class="btn btn-md btn-info" data-toggle="collapse" data-target="#adQryContent"> Advanced Query <span class="caret"></span></button> 
+              <div id="adQryContent" class="collapse">
+              <br>
+              <div class="col-xs-12 col-md-12 column">
+                <div class="row clearfix">
+                  <table class="table table-hover" id="tab_logic">
+                    <thead>
+                      <tr >
+                        <th class="text-center">
+                          Field
+                        </th>
+                        <th class="text-center">
+                          Values
+                        </th>
+                        <th class="text-center">
+                          Sort
+                        </th>
+                        <th class="text-center">
+                          Range
+                        </th>
+                        <th class="text-center">
+                          Data Type
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id='addr0'>
+                        <td>
+                        <input type="text" name='field0' id='field0' placeholder='Field' class="form-control"/>
+                        </td>
+                        <td>
+                        <input type="text" name='value0' id='value0' placeholder='Values' class="form-control"/>
+                        </td>
+                        <td>
+                        <a href="#"><i class="fa fa-sort" aria-hidden="true"></i></a>
+                        </td>
+                        <td><span  name='range0" type='text' placeholder='Range' id='range0'></span></td>
+                        <td><span  name='dataType0" type='text' placeholder='Data Type' id='dataType0'></span></td>
+                      </tr>
+                        <!--<tr id='addr1'></tr>-->
+                    </tbody>
+                  </table>
+                  </div>
+                  <a id="add_row" class="pull-left" href="#"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+                  <a id="delete_row" class="pull-right" href="#"><i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i></a>
+                </div>
+              </div>
+          </div>   
+        </div>
+
+        <div class="col-xs-12 col-md-5 pull-right">
+          <br>
+          <button id="sampleQueryBtn" class="btn btn-success" data-toggle="collapse" data-target="#sampleQuery">Sample Query <span class="dropup"><span class="caret"></span></span></button>          
+          <div class="well collapse in" id="sampleQuery">
+            <div id="sideBar" class="dropdown">
+              <button class="btn btn-default btn-block dropdown-toggle diseaseBtn" type="button" data-toggle="dropdown">Pick A Disease Table
+              <span class="caret"></span></button>
+              <ul id="diseaseDropDown" class="dropdown-menu dropdown-menu-left">
+              </ul>
+            </div>
+            <div id="sampleBtn" class="text-center"></div>
+          </div>    
+          <br>
+          <h2>Results</h2>
+          <div>
+            <i class="fa fa-refresh fa-spin fa-3x fa-fw" style="display:none"></i>
+            <label id="resCollpase" class="label label-info label-sm pull-right" style="display:none">collapse</label>
+            <div id="divResults"></div>
+          </div>
+        </div>     
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <div class="row">
+    <div class="span9">
+    <h2>Tools Evaluation By Diseases</h2>
+    <br>
+    <br>
+    <div class="span9" id="toolEval"></div>
+    </div>
+  </div>
+</div>
